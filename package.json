@@ -1,0 +1,32 @@
+{
+  "name": "multi-ai-debate-orchestrator",
+  "version": "1.0.0",
+  "description": "Orchestrate multiple AI chat websites (ChatGPT, Claude, Gemini) into structured, role-based thinking flows without APIs",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/multi-ai-debate-orchestrator.git"
+  },
+  "keywords": [
+    "chrome-extension",
+    "ai",
+    "chatgpt",
+    "claude",
+    "gemini",
+    "orchestration",
+    "debate",
+    "brainstorming"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/multi-ai-debate-orchestrator/issues"
+  },
+  "homepage": "https://github.com/yourusername/multi-ai-debate-orchestrator#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

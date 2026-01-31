@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Debate Arena</title>
+  <link rel="stylesheet" href="arena.css">
+  <script src="launcher.js"></script>
+</head>
+<body>
+  <div class="arena-container">
+    <!-- Header with controls -->
+    <header class="arena-header">
+      <div class="header-content">
+        <h1>🎭 AI Debate Arena</h1>
+        <div class="header-controls">
+          <button id="new-debate-btn" class="btn-primary">New Debate</button>
+          <button id="settings-btn" class="btn-secondary">⚙️</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Setup panel (shown before debate starts) -->
+    <div id="setup-panel" class="setup-panel">
+      <div class="setup-content">
+        <h2>Setup Your Debate</h2>
+        
+        <div class="setup-section">
+          <label>Select AIs (check at least 2)</label>
+          <div class="ai-grid">
+            <label class="ai-card">
+              <input type="checkbox" value="chatgpt" checked>
+              <div class="ai-card-content">
+                <div class="ai-avatar" style="background: #10a37f;">GPT</div>
+                <span>ChatGPT</span>
+              </div>
+            </label>
+            <label class="ai-card">
+              <input type="checkbox" value="claude" checked>
+              <div class="ai-card-content">
+                <div class="ai-avatar" style="background: #cc785c;">C</div>
+                <span>Claude</span>
+              </div>
+            </label>
+            <label class="ai-card">
+              <input type="checkbox" value="gemini" checked>
+              <div class="ai-card-content">
+                <div class="ai-avatar" style="background: #4285f4;">G</div>
+                <span>Gemini</span>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="setup-section">
+          <label>Debate Template</label>
+          <select id="template-select-arena" class="template-select">
+            <option value="brainstorm">🧠 Brainstorm - Generate → Critique → Improve</option>
+            <option value="debate">⚔️ Debate - Advocate → Opponent → Judge</option>
+            <option value="validation">🔍 Validation - Design → Test → Assess</option>
+            <option value="redteam">🔒 Red Team - Architect → Attack → Audit</option>
+          </select>
+        </div>
+
+        <div class="setup-section">
+          <label>Topic or Problem</label>
+          <textarea id="topic-input-arena" placeholder="What should the AIs discuss? Be specific..." rows="3"></textarea>
+        </div>
+
+        <div class="setup-section">
+          <label>Settings</label>
+          <div class="settings-row">
+            <label class="setting-item">
+              <span>Max Rounds:</span>
+              <input type="number" id="max-rounds-arena" min="1" max="3" value="1">
+            </label>
+          </div>
+        </div>
+
+        <button id="start-debate-btn" class="btn-start">Start Debate →</button>
+      </div>
+    </div>
+
+    <!-- Conversation view (shown during debate) -->
+    <div id="conversation-view" class="conversation-view" style="display: none;">
+      <!-- Messages container -->
+      <div class="messages-container" id="messages-container">
+        <!-- Messages will be inserted here -->
+      </div>
+
+      <!-- Status bar -->
+      <div class="status-bar" id="status-bar">
+        <div class="status-content">
+          <div class="status-indicator">
+            <span class="status-dot"></span>
+            <span id="status-text">Initializing...</span>
+          </div>
+          <div class="progress-info">
+            <span id="turn-counter">Turn 0/0</span>
+            <span id="current-ai">-</span>
+            <button id="conclusion-btn" class="btn-conclusion" style="display: none;">
+              📝 Generate Conclusion
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="arena.js"></script>
+</body>
+</html>

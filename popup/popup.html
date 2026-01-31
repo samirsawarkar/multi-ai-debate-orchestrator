@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Debate Orchestrator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>AI Orchestrator</h1>
+    </header>
+
+    <section class="ai-selection">
+      <h2>Select AIs</h2>
+      <div class="checkbox-group">
+        <label>
+          <input type="checkbox" id="ai-chatgpt" value="chatgpt">
+          <span>ChatGPT</span>
+        </label>
+        <label>
+          <input type="checkbox" id="ai-claude" value="claude">
+          <span>Claude</span>
+        </label>
+        <label>
+          <input type="checkbox" id="ai-gemini" value="gemini">
+          <span>Gemini</span>
+        </label>
+      </div>
+    </section>
+
+    <section class="template-selection">
+      <h2>Flow Template</h2>
+      <select id="template-select">
+        <option value="brainstorm">🧠 Brainstorm</option>
+        <option value="debate">⚔️ Debate</option>
+        <option value="validation">🔍 Validation</option>
+        <option value="redteam">🔒 Red Team</option>
+      </select>
+    </section>
+
+    <section class="user-input">
+      <h2>Topic / Problem</h2>
+      <textarea id="user-topic" placeholder="Enter the topic or problem you want the AIs to analyze..." rows="4"></textarea>
+    </section>
+
+    <section class="flow-controls">
+      <button id="start-flow" class="btn-primary">Start Flow</button>
+      <button id="stop-flow" class="btn-secondary" disabled>Stop</button>
+    </section>
+
+    <section class="status" id="status-section" style="display: none;">
+      <div class="status-indicator">
+        <span class="status-dot"></span>
+        <span id="status-text">Idle</span>
+      </div>
+      <div class="current-turn" id="current-turn"></div>
+    </section>
+
+    <section class="actions">
+      <button id="test-connection" class="btn-link" style="background: #fef3c7; color: #92400e; border-color: #fbbf24;">🔧 Test Connection</button>
+      <button id="open-sidepanel" class="btn-link">Open Side Panel →</button>
+      <button id="open-tabs" class="btn-link">Open AI Tabs</button>
+    </section>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
